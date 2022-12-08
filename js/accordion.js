@@ -1,8 +1,6 @@
-/** @format */
-
-let btn = document.querySelector(".feature__link");
-let btns = document.querySelectorAll(".feature__link");
-let lists = document.querySelectorAll(".feature-sub");
+const btn = document.querySelector(".feature__link");
+const btns = document.querySelectorAll(".feature__link");
+const lists = document.querySelectorAll(".feature-sub");
 
 // btn.addEventListener ('click', () => console.dir(btn)); //Отслеживание клика
 
@@ -38,6 +36,5 @@ btns.forEach((btnItem, index) => {
       }
       i++;
       number = index;
-      console.log(i);
    });
 });

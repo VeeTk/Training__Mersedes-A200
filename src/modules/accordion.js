@@ -1,6 +1,7 @@
 const accordion = (btns, sub) => {
-   const btns = document.querySelectorAll(btns);
-   const sub = document.querySelectorAll(sub);
+   const btn = document.querySelector(".feature__link");
+   const btns = document.querySelectorAll(".feature__link");
+   const lists = document.querySelectorAll(".feature-sub");
 
    // btn.addEventListener ('click', () => console.dir(btn)); //Отслеживание клика
 
@@ -36,7 +37,6 @@ const accordion = (btns, sub) => {
          }
          i++;
          number = index;
-         console.log(i);
       });
    });
 }

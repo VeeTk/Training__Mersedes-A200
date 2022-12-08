@@ -1,8 +1,8 @@
-# Training__Mersedes-A200
+#Training__Mersedes-A200
 
-## Интенсив от Glo Academy по JS
-## Выполнил: Дмитрий Ткачев
+##Интенсив от Glo Academy по JS
+##Выполнил: Дмитрий Ткачев
 
-### Технологии:
+###Технологии:
 -JavaScript
 -webpack

@@ -5,8 +5,6 @@ import modal from "./modules/modal";
 import burger from "./modules/burger";
 import accordion from "./modules/accordion";
 
-
-
 tabs(".design__title", "[data-tabs-handler]", "[data-tabs-field]");
 smoothScroll(".menu-list__link", ".main__scroll");
 sendForm(".form-test-drive");
