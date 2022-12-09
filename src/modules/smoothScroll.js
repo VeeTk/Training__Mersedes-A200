@@ -1,6 +1,6 @@
-const smoothScroll = (links, mainScroll) => {
+const smoothScroll = (links, scroll) => {
    const linksHead = document.querySelectorAll(links);
-   const mainScroll = document.querySelector(mainScroll);
+   const mainScroll = document.querySelector(scroll);
    const newArray = [...linksHead, mainScroll];
 
    newArray.forEach((link) => {

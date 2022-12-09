@@ -1,7 +1,6 @@
-const accordion = (btns, sub) => {
-   const btn = document.querySelector(".feature__link");
-   const btns = document.querySelectorAll(".feature__link");
-   const lists = document.querySelectorAll(".feature-sub");
+const accordion = (accBtn, list) => {
+   const btns = document.querySelectorAll(accBtn);
+   const lists = document.querySelectorAll(list);
 
    // btn.addEventListener ('click', () => console.dir(btn)); //Отслеживание клика
 
@@ -11,34 +10,30 @@ const accordion = (btns, sub) => {
 
    // Современный способ перебрать массив Selector All
    let number = 0;
-   let i = 0;
    btns.forEach((btnItem, index) => {
       btnItem.addEventListener("click", () => {
-         btns.forEach((btnItem, index) => {
-            btnItem.classList.remove("feature__link_active");
-         });
+         if (number == index && !lists[index].classList.contains("hidden")) {
+            lists[index].classList.add("hidden");
 
-         btnItem.classList.add("feature__link_active");
+            btns.forEach((btnItem) => {
+               btnItem.classList.remove("feature__link_active");
+            });
+         } else if (lists[index].classList.contains("hidden")) {
+            lists.forEach((listItem) => {
+               listItem.classList.add("hidden");
+            });
 
-         lists.forEach((listItem, index) => {
-            listItem.classList.add("hidden");
-         });
+            lists[index].classList.remove("hidden");
 
-         lists[index].classList.remove("hidden");
-
-         if (index == number && i % 2 == 0) {
-            btns.forEach((btnItem, index) => {
+            btns.forEach((btnItem) => {
                btnItem.classList.remove("feature__link_active");
             });
 
-            lists.forEach((listItem, index) => {
-               listItem.classList.add("hidden");
-            });
+            btnItem.classList.add("feature__link_active");
          }
-         i++;
          number = index;
       });
    });
-}
+};
 
 export default accordion;

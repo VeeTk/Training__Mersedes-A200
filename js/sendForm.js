@@ -1,4 +1,25 @@
 const form = document.querySelector(".form-test-drive");
+const inputs = document.querySelectorAll(".input-js");
+const formBtn = document.querySelector(".form__button");
+
+formBtn.disabled = true;
+for (let input of inputs) {
+   input.oninput = function () {
+      if (
+         inputs[0].value !== "" &&
+         inputs[0].value.charAt(0) !== " " &&
+         inputs[1].value !== "" &&
+         inputs[1].value.charAt(0) !== " " &&
+         inputs[2].value !== "" &&
+         inputs[2].value.charAt(0) !== " "
+      ) {
+         formBtn.disabled = false;
+      } else {
+         formBtn.disabled = true;
+      }
+   };
+}
+
 // https://jsonplaceholder.typicode.com
 form.addEventListener("submit", (event) => {
    event.preventDefault();
@@ -10,6 +31,7 @@ form.addEventListener("submit", (event) => {
          data[name] = value;
       }
    }
+
    fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       body: JSON.stringify(data),
@@ -28,4 +50,5 @@ form.addEventListener("submit", (event) => {
       .catch((error) => {
          alert("Произошла ошибка, статус: " + error.message);
       });
+   formBtn.disabled = true;
 });

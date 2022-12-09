@@ -7,7 +7,7 @@ import accordion from "./modules/accordion";
 
 tabs(".design__title", "[data-tabs-handler]", "[data-tabs-field]");
 smoothScroll(".menu-list__link", ".main__scroll");
-sendForm(".form-test-drive");
+sendForm(".form-test-drive", ".input-js", ".form__button");
 modal(".more", ".modal");
 burger(".humburger-menu", ".menu", ".menu-list__link");
 accordion(".feature__link", ".feature-sub");
